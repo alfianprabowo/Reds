@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">Reds</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">John Doe</string>
+    <string name="nav_header_subtitle">john@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+
+    <string name="property">Property</string>
+    <string name="menu_report">Report</string>
+    <string name="menu_customer">Customer</string>
+    <string name="username_email">Username/Email</string>
+    <string name="login">Login</string>
+
+    <string name="name">Nama</string>
+    <string name="location">Lokasi</string>
+    <string name="status">Status</string>
+    <string name="price">Harga</string>
+    <string name="bedroom">Kamar Tidur</string>
+    <string name="bathroom">Kamar Mandi</string>
+    <string name="floor">Lantai</string>
+    <string name="hold">Hold</string>
+    <string name="sold">Sold</string>
+    <string name="type">Tipe</string>
+    <string name="home">Rumah</string>
+    <string name="apartment">Apartemen</string>
+    <string name="shophouse">Ruko</string>
+    <string name="home_office">Ruko</string>
+    <string name="land">Tanah</string>
+    <string name="manufactured_home">Rumah Produksi</string>
+    <string name="password">Password</string>
+    <string name="logo">Logo</string>
+    <string name="image_property">Image Property</string>
+    <string name="area">Area</string>
+    <string name="surface_area">Luas Tanah</string>
+    <string name="surface_area_value">500 m<sup><small>2</small></sup></string>
+    <string name="building_area">Luas Bangunan</string>
+    <string name="building_area_value">650 m<sup><small>2</small></sup></string>
+    <string name="price_value">Rp. 2.000.000.000</string>
+    <string name="house_name_value">Rumah Mewah Modern Minimalis Pusat Kota</string>
+    <string name="location_value">Menteng, Jakarta Pusat</string>
+    <string name="slide_image">Slide Image</string>
+    <string name="bedroom_value">4</string>
+    <string name="bathroom_value">3</string>
+    <string name="detail_property">Detil Properti</string>
+    <string name="floor_value">2</string>
+    <string name="facility">Fasilitas</string>
+    <string name="type_value">Rumah</string>
+
+    <string name="facility_value">AC, Carport, Garasi, Taman, Air Sumur dan PAM, Dapur Bersih dan Dapur Kotor</string>
+    <string name="description">Deskripsi</string>
+    <string name="description_value">- Alamat Lokasi : jl raya menteng no. 1\n- Kondisi rumah baru\n- Full Furnished</string>
+    <string name="address_value">l raya menteng no. 1</string>
+    <string name="status_value">Tersedia</string>
+    <string name="pay">Beli Properti</string>
+    <string name="developer_value">Reds Developer</string>
+    <string name="phone_developer_value">081234567890</string>
+    <string name="developer">Developer / Agen</string>
+    <string name="property_list">Daftar Properti</string>
+    <string name="notification">Notifikasi</string>
+    <string name="chat">Pesan</string>
+    <string name="transaction_progress">Progress Transaksi</string>
+
+
+</resources>
