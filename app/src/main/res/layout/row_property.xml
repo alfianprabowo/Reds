@@ -12,15 +12,33 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="2"
+        android:weightSum="3"
         android:baselineAligned="false">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:id="@+id/image_row_property"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:src="@drawable/property1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:contentDescription="@string/image_property" />
+
+        </LinearLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_margin="8dp"
-            android:layout_weight="1">
+            android:layout_weight="2">
 
             <TextView
                 android:id="@+id/name_row_property"
@@ -39,6 +57,7 @@
                 android:maxLines="1"
                 android:text="@string/location"
                 android:textColor="@color/grey"
+                android:textSize="12sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/name_row_property"/>
 
@@ -49,6 +68,7 @@
                 android:maxLines="1"
                 android:text="@string/area"
                 android:textColor="@color/grey"
+                android:textSize="12sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/location_row_property"/>
 
@@ -60,6 +80,7 @@
                 android:maxLines="1"
                 android:text="@string/area"
                 android:textColor="@color/grey"
+                android:textSize="12sp"
                 app:layout_constraintStart_toEndOf="@+id/surface_area_row_property"
                 app:layout_constraintTop_toBottomOf="@+id/location_row_property"/>
 
@@ -70,6 +91,7 @@
                 android:maxLines="1"
                 android:text="@string/bedroom"
                 android:textColor="@color/grey"
+                android:textSize="12sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/surface_area_row_property"/>
 
@@ -80,6 +102,7 @@
                 android:maxLines="1"
                 android:text="@string/bathroom"
                 android:textColor="@color/grey"
+                android:textSize="12sp"
                 app:layout_constraintStart_toEndOf="@+id/bedroom_row_property"
                 app:layout_constraintTop_toBottomOf="@+id/surface_area_row_property"/>
 
@@ -100,23 +123,7 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_margin="8dp">
 
-            <ImageView
-                android:id="@+id/image_row_property"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:src="@drawable/property1"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:contentDescription="@string/image_property" />
-
-        </LinearLayout>
 
     </LinearLayout>
 

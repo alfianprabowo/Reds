@@ -63,6 +63,19 @@
     <string name="notification">Notifikasi</string>
     <string name="chat">Pesan</string>
     <string name="transaction_progress">Progress Transaksi</string>
+    <string name="account">Akun</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_home">Home</string>
+    <string name="report">Report</string>
+    <string name="account_image">Account Image</string>
+    <string name="account_name">John Doe</string>
+    <string name="account_email">John@mail.com</string>
+    <string name="report_daily">Laporan Harian</string>
+    <string name="report2_daily">Laporan Bulanan</string>
+    <string name="back">Back</string>
+    <string name="my_account">Akun Saya</string>
+    <string name="customer">Customer</string>
 
 
 </resources>
