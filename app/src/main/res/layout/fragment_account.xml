@@ -73,14 +73,6 @@
                     android:textColor="@color/white"
                     android:textSize="18sp" />
 
-                <ImageButton
-                    android:src="@drawable/ic_arrow_back"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:contentDescription="@string/back"
-                    android:onClick="back"/>
-
             </RelativeLayout>
 
         </androidx.appcompat.widget.Toolbar>
