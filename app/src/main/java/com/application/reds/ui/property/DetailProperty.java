@@ -2,6 +2,7 @@ package com.application.reds.ui.property;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -14,6 +15,8 @@ import com.application.reds.R;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
 
+import java.util.Objects;
+
 public class DetailProperty extends AppCompatActivity {
 
     CarouselView carouselView;
@@ -21,7 +24,7 @@ public class DetailProperty extends AppCompatActivity {
 
 
     int[] sampleImages = {R.drawable.property1, R.drawable.property1a, R.drawable.property1b};
-    int[] sampleImages2 = {R.drawable.property1, R.drawable.property1a, R.drawable.property1b};
+    int[] sampleImages2 = {R.drawable.siteplan, R.drawable.siteplan2,R.drawable.siteplan3 };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,16 +37,25 @@ public class DetailProperty extends AppCompatActivity {
     private void bindViews(){
         carouselView = findViewById(R.id.carouselView);
         carouselView.setPageCount(sampleImages.length);
+        Intent intent = getIntent();
+        final int property = Integer.parseInt(intent.getStringExtra("property"));
+        Log.d("res", property +" ");
+        ImageListener imageListener = new ImageListener() {
+            @Override
+            public void setImageForPosition(int position, ImageView imageView) {
+                if(property == 1){
+                    imageView.setImageResource(sampleImages[position]);
+                } if(property == 3) {
+                    imageView.setImageResource(sampleImages2[position]);
+                }
+            }
+        };
+
         carouselView.setImageListener(imageListener);
 
     }
 
-    ImageListener imageListener = new ImageListener() {
-        @Override
-        public void setImageForPosition(int position, ImageView imageView) {
-            imageView.setImageResource(sampleImages[position]);
-        }
-    };
+
 
     @Override
     public void onBackPressed() {

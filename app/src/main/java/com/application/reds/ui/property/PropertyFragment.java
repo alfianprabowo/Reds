@@ -68,10 +68,15 @@ public class PropertyFragment extends Fragment implements PropertyAdapterListene
                 getResources().getResourceTypeName(R.drawable.property1) + '/' +
                 getResources().getResourceEntryName(R.drawable.property1));
 
-        Uri imageUri3 = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE +
+        Uri imageUri2 = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE +
                 "://" + getResources().getResourcePackageName(R.drawable.property3) + '/' +
                 getResources().getResourceTypeName(R.drawable.property3) + '/' +
                 getResources().getResourceEntryName(R.drawable.property3));
+
+        Uri imageUri3 = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE +
+                "://" + getResources().getResourcePackageName(R.drawable.siteplan2) + '/' +
+                getResources().getResourceTypeName(R.drawable.siteplan2) + '/' +
+                getResources().getResourceEntryName(R.drawable.siteplan2));
 
 
         Property property = new Property(
@@ -91,12 +96,12 @@ public class PropertyFragment extends Fragment implements PropertyAdapterListene
                 imageUri
         );
 
-        Property property3 = new Property(
+        Property property2 = new Property(
                 2,
                 "Villa Mewah Bali",
                 "Canggu, Bali",
                 "Jl. Raya canggu no 10",
-                "Tersedia",
+                "Available",
                 "Full Furnished",
                 3,
                 3,
@@ -104,8 +109,8 @@ public class PropertyFragment extends Fragment implements PropertyAdapterListene
                 400,
                 1900000000,
                 "Villa",
-                "Kolam Renang, Dapur Bersih dan Dapur Kotor, Garasi, Air Sumur dan PAM",
-                imageUri3
+                "Pool, Dapur Bersih dan Dapur Kotor, Garage, Air Sumur dan PAM",
+                imageUri2
         );
 
         Property komplek = new Property(
@@ -113,20 +118,20 @@ public class PropertyFragment extends Fragment implements PropertyAdapterListene
                 "Komplek Ciumbuleuit",
                 "Ciumbuleuit, Bandung",
                 "Jl. Raya Ciumbuleuit no 99",
-                "Tersedia",
+                "Available",
                 "- Full Furnished \n- SHM",
                 3,
                 3,
                 400,
                 350,
                 1900000000,
-                "Villa",
-                "Kolam Renang, Dapur Bersih dan Dapur Kotor, Garasi, Air Sumur dan PAM",
+                "Real Estate",
+                "Lake, Garden, Minimarket, Jogging Track ",
                 imageUri3
         );
 
         propertList.add(property);
-        propertList.add(property3);
+        propertList.add(property2);
         propertList.add(komplek);
 
     }
@@ -135,6 +140,7 @@ public class PropertyFragment extends Fragment implements PropertyAdapterListene
     @Override
     public void onItemSelected(Property data) {
         Intent intent = new Intent(getContext(), DetailProperty.class);
+        intent.putExtra("property", data.getId() + "");
         startActivity(intent);
     }
 
