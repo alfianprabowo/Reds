@@ -196,7 +196,7 @@
                             android:text="@string/bathroom" />
 
                         <TextView
-                            android:id="@+id/bathroom_detail_property"
+                            android:id="@+id/commission_id_total"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
