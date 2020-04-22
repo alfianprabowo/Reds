@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
@@ -10,14 +11,33 @@
         android:name="com.application.reds.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home">
-
-
     </fragment>
 
     <fragment
         android:id="@+id/nav_property"
         android:name="com.application.reds.ui.property.PropertyFragment"
-        android:label="@string/property_list"
+        android:label="@string/property"
+        tools:layout="@layout/fragment_property" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_report"
+        android:name="com.application.reds.ui.report.ReportFragment"
+        android:label="@string/report"
+        tools:layout="@layout/fragment_report" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_customer"
+        android:name="com.application.reds.ui.customer.CustomerFragment"
+        android:label="@string/property"
+        tools:layout="@layout/fragment_property" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_account"
+        android:name="com.application.reds.ui.account.AccountFragment"
+        android:label="@string/account"
         tools:layout="@layout/fragment_property" >
     </fragment>
 

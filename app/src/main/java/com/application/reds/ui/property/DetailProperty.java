@@ -1,12 +1,15 @@
 package com.application.reds.ui.property;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.application.reds.MainActivity;
 import com.application.reds.R;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
@@ -47,4 +50,7 @@ public class DetailProperty extends AppCompatActivity {
         finish();
     }
 
+    public void back(View view) {
+        finish();
+    }
 }
