@@ -1,4 +1,4 @@
-package com.application.reds.ui.customer;
+package com.application.reds.ui.broker.account;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,15 +10,13 @@ import androidx.fragment.app.Fragment;
 
 import com.application.reds.R;
 
-public class CustomerFragment extends Fragment {
-
-    private View view;
+public class AccountFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
 
-        //view = inflater.inflate(R.layout.fragment_customer, container, false);
+        View view = inflater.inflate(R.layout.fragment_broker_account, container, false);
         //final TextView textView = root.findViewById(R.id.text_home);
 
 

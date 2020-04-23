@@ -23,6 +23,18 @@
         </activity>
 
         <activity
+            android:name=".ModeActivity">
+        </activity>
+
+        <activity
+            android:name=".BrokerActivity">
+        </activity>
+
+        <activity
+            android:name=".PresentationActivity">
+        </activity>
+
+        <activity
             android:name=".ui.property.DetailProperty">
         </activity>
 

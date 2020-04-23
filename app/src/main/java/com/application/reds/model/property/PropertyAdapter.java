@@ -1,12 +1,6 @@
 package com.application.reds.model.property;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
-import android.content.res.TypedArray;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.application.reds.R;
-import com.application.reds.ui.IndonesiaCurrency;
+import com.application.reds.controller.IndonesiaCurrency;
 
 import java.util.List;
 

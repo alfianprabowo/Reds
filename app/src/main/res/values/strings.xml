@@ -25,7 +25,7 @@
     <string name="hold">Hold</string>
     <string name="sold">Sold</string>
     <string name="type">Type</string>
-    <string name="home">Rumah</string>
+    <string name="house">Rumah</string>
     <string name="apartment">Apartemen</string>
     <string name="shophouse">Ruko</string>
     <string name="home_office">Ruko</string>
@@ -52,14 +52,14 @@
 
     <string name="facility_value">AC, Carport, Garasi, Taman, Air Sumur dan PAM, Dapur Bersih dan Dapur Kotor</string>
     <string name="description">Description</string>
-    <string name="description_value">- jl raya menteng no. 1\n- Kondisi rumah baru\n- Full Furnished</string>
+    <string name="description_value">- jl. raya menteng no. 1\n- Kondisi rumah baru\n- Full Furnished</string>
     <string name="address_value">jl. raya menteng no. 1</string>
     <string name="status_value">Available</string>
     <string name="pay">Buy Property</string>
     <string name="developer_value">Reds Developer</string>
     <string name="phone_developer_value">081234567890</string>
     <string name="developer">Developer / Agent</string>
-    <string name="property_list">Properti List</string>
+    <string name="property_list">Property List</string>
     <string name="notification">Notifications</string>
     <string name="chat">Messages</string>
     <string name="transaction_progress">Transaction Progress</string>
@@ -78,5 +78,12 @@
     <string name="customer">Customer</string>
 
     <string name="edit_account">Edit Account</string>
+    <string name="siteplan">Site Plan</string>
+    <string name="primary">Primary</string>
+    <string name="personal">Personal</string>
+    <string name="presentation">Presentation</string>
+    <string name="select_mode">Select Mode</string>
+    <string name="primary_list">Primary List</string>
+    <string name="personal_list">Personal List</string>
 
 </resources>

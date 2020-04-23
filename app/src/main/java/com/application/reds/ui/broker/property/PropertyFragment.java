@@ -1,24 +1,17 @@
-package com.application.reds.ui.property;
+package com.application.reds.ui.broker.property;
 
 import android.content.ContentResolver;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,7 +20,7 @@ import com.application.reds.R;
 import com.application.reds.model.property.Property;
 import com.application.reds.model.property.PropertyAdapter;
 import com.application.reds.model.property.PropertyAdapterListener;
-import com.application.reds.ui.home.HomeFragment;
+import com.application.reds.ui.property.DetailProperty;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -42,7 +35,7 @@ public class PropertyFragment extends Fragment implements PropertyAdapterListene
                              ViewGroup container, Bundle savedInstanceState) {
 
 
-        view = inflater.inflate(R.layout.fragment_property, container, false);
+        view = inflater.inflate(R.layout.fragment_broker_property, container, false);
         //final TextView textView = root.findViewById(R.id.text_home);
 
         bindViews();

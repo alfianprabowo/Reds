@@ -18,7 +18,7 @@ public class ReportFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
 
-        view = inflater.inflate(R.layout.fragment_report, container, false);
+        //view = inflater.inflate(R.layout.fragment_report, container, false);
         //final TextView textView = root.findViewById(R.id.text_home);
 
 

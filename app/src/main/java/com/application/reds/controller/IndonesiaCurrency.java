@@ -1,4 +1,4 @@
-package com.application.reds.ui;
+package com.application.reds.controller;
 
 import java.text.NumberFormat;
 import java.util.Locale;

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/broker_navigation"
+    app:startDestination="@+id/nav_broker_home">
+
+    <fragment
+        android:id="@+id/nav_broker_home"
+        android:name="com.application.reds.ui.broker.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_broker_home">
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_broker_property"
+        android:name="com.application.reds.ui.broker.property.PropertyFragment"
+        android:label="@string/property"
+        tools:layout="@layout/fragment_broker_property" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_broker_primary"
+        android:name="com.application.reds.ui.broker.primary.PrimaryFragment"
+        android:label="@string/primary"
+        tools:layout="@layout/fragment_broker_primary" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_broker_personal"
+        android:name="com.application.reds.ui.broker.personal.PersonalFragment"
+        android:label="@string/personal"
+        tools:layout="@layout/fragment_broker_personal" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_broker_account"
+        android:name="com.application.reds.ui.broker.account.AccountFragment"
+        android:label="@string/account"
+        tools:layout="@layout/fragment_broker_account" >
+    </fragment>
+
+
+</navigation>

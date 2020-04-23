@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/presentation_navigation"
+    app:startDestination="@+id/nav_presentation_property">
+
+    <fragment
+        android:id="@+id/nav_presentation_property"
+        android:name="com.application.reds.ui.presentation.property.PropertyFragment"
+        android:label="@string/property"
+        tools:layout="@layout/fragment_presentation_property">
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_presentation_primary"
+        android:name="com.application.reds.ui.presentation.primary.PrimaryFragment"
+        android:label="@string/primary"
+        tools:layout="@layout/fragment_presentation_primary" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_presentation_personal"
+        android:name="com.application.reds.ui.presentation.personal.PersonalFragment"
+        android:label="@string/personal"
+        tools:layout="@layout/fragment_presentation_personal" >
+    </fragment>
+
+
+</navigation>
