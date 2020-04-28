@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -248,8 +249,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
                             android:layout_weight="2"
-                            android:text="10"
-                            android:textStyle="bold" />
+                            android:text="10" />
 
                     </LinearLayout>
 
@@ -333,16 +333,59 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_edit_account"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="101dp"
+        android:layout_height="59dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="?attr/actionBarSize"
-        android:text="@string/edit_account"
+        android:layout_marginBottom="40dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="Ubah"
+        android:textAlignment="center"
         android:textAllCaps="false"
+        android:textColor="@color/black"
+        app:backgroundTint="#FFEB3B"
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonCM"
+        android:layout_width="101dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="40dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="Mode"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:backgroundTint="@android:color/holo_blue_light"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonLogout"
+        android:layout_width="101dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="@color/colorAccent"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="Keluar"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:backgroundTint="#FFEB3B"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
 
