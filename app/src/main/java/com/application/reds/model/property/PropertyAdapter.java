@@ -5,6 +5,8 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,17 +16,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.application.reds.R;
 import com.application.reds.controller.IndonesiaCurrency;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.MyViewHolder> {
+public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.MyViewHolder> implements Filterable {
 
     private List<Property> propertyList;
+    private List<Property> propertyListFiltered;
     private PropertyAdapterListener adapterListener;
-    IndonesiaCurrency kurs = new IndonesiaCurrency();
+    private IndonesiaCurrency kurs = new IndonesiaCurrency();
 
     public PropertyAdapter(List<Property> propertyList, PropertyAdapterListener listener){
         this.adapterListener = listener;
         this.propertyList = propertyList;
+        this.propertyListFiltered = propertyList;
     }
 
     @NonNull
@@ -54,7 +59,42 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.MyView
 
     @Override
     public int getItemCount() {
-        return propertyList.size();
+        return propertyListFiltered.size();
+    }
+
+    @Override
+    public Filter getFilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence charSequence) {
+                String charString = charSequence.toString();
+                if (charString.isEmpty()) {
+                    propertyListFiltered = propertyList;
+                } else {
+                    List<Property> filteredList = new ArrayList<>();
+                    for (Property row : propertyList) {
+
+                        // name match condition. this might differ depending on your requirement
+                        // here we are looking for name or phone number match
+                        if (row.getName().toLowerCase().contains(charString.toLowerCase())) {
+                            filteredList.add(row);
+                        }
+                    }
+
+                    propertyListFiltered = filteredList;
+                }
+
+                FilterResults filterResults = new FilterResults();
+                filterResults.values = propertyListFiltered;
+                return filterResults;
+            }
+
+            @Override
+            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+                propertyListFiltered = (ArrayList<Property>) filterResults.values;
+                notifyDataSetChanged();
+            }
+        };
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder{

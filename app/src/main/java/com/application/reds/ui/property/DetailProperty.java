@@ -39,7 +39,6 @@ public class DetailProperty extends AppCompatActivity {
         carouselView.setPageCount(sampleImages.length);
         Intent intent = getIntent();
         final int property = Integer.parseInt(intent.getStringExtra("property"));
-        Log.d("res", property +" ");
         ImageListener imageListener = new ImageListener() {
             @Override
             public void setImageForPosition(int position, ImageView imageView) {

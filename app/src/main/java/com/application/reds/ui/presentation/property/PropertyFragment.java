@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -20,16 +21,17 @@ import com.application.reds.R;
 import com.application.reds.model.property.Property;
 import com.application.reds.model.property.PropertyAdapter;
 import com.application.reds.model.property.PropertyAdapterListener;
+import com.application.reds.ui.ActionBottomDialogFragment;
 import com.application.reds.ui.property.DetailProperty;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 
-public class PropertyFragment extends Fragment implements PropertyAdapterListener, NavigationView.OnNavigationItemSelectedListener {
+public class PropertyFragment extends Fragment implements PropertyAdapterListener, NavigationView.OnNavigationItemSelectedListener, ActionBottomDialogFragment.ItemClickListener {
 
     private View view;
-    private RecyclerView recyclerView;
-    public static ArrayList<Property> propertList = new ArrayList<>();
+    private static ArrayList<Property> propertList = new ArrayList<>();
+    private CardView filter_button;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -39,18 +41,30 @@ public class PropertyFragment extends Fragment implements PropertyAdapterListene
 
         bindViews();
         initData();
+        initActionButtons();
 
         return view;
     }
 
+    private void initActionButtons() {
+        filter_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ActionBottomDialogFragment addPhotoBottomDialogFragment = ActionBottomDialogFragment.newInstance();
+                addPhotoBottomDialogFragment.show(getParentFragmentManager(), ActionBottomDialogFragment.TAG);
+            }
+        });
+    }
+
     private void bindViews() {
-        recyclerView = view.findViewById(R.id.list_property_presentation);
+        RecyclerView recyclerView = view.findViewById(R.id.list_property_presentation);
 
         PropertyAdapter adapter = new PropertyAdapter(propertList, this);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
+        filter_button = view.findViewById(R.id.filter_cardview_property_presentation);
     }
 
     private void initData() {
@@ -141,9 +155,14 @@ public class PropertyFragment extends Fragment implements PropertyAdapterListene
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
-            Toast.makeText(getContext(), "tes", Toast.LENGTH_SHORT).show();
-        }
+
         return false;
     }
+
+
+    @Override
+    public void onItemClick(String item) {
+        Toast.makeText(getContext(), " tes dialog", Toast.LENGTH_SHORT).show();
+    }
+
 }

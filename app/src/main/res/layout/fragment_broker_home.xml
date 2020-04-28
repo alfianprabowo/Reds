@@ -61,17 +61,38 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/chat_text_home"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/title_message"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/chat"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/appbar_home" />
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/chat_text_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chat"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_weight="1"
+                    android:layout_marginStart="16dp"/>
+
+                <TextView
+                    android:id="@+id/chat_all_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/view_all"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_gravity="end"
+                    android:gravity="end"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/chat_cardview_home"
@@ -81,7 +102,7 @@
                 android:layout_marginEnd="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/chat_text_home"
+                app:layout_constraintTop_toBottomOf="@id/title_message"
                 android:elevation="5dp"
                 app:cardCornerRadius="8dp"
                 app:cardUseCompatPadding="true">
@@ -205,15 +226,36 @@
                 android:layout_marginRight="16dp"
                 android:layout_marginLeft="16dp"/>
 
-            <TextView
-                android:id="@+id/transaction_text_home"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/title_transaction"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:orientation="horizontal"
                 android:layout_marginTop="16dp"
-                android:text="@string/transaction_progress"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/chat_cardview_home" />
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/transaction_text_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_weight="1"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/transaction_progress" />
+
+                <TextView
+                    android:id="@+id/transaction_all_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/view_all"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_gravity="end"
+                    android:gravity="end"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/transaction_cardview_home"
@@ -322,15 +364,36 @@
                 android:layout_marginRight="16dp"
                 android:layout_marginLeft="16dp"/>
 
-            <TextView
-                android:id="@+id/notification_text_home"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/title_notification"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:orientation="horizontal"
                 android:layout_marginTop="16dp"
-                android:text="@string/notification"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/transaction_cardview_home" />
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/notification_text_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notification"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_weight="1"
+                    android:layout_marginStart="16dp" />
+
+                <TextView
+                    android:id="@+id/notification_all_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/view_all"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_gravity="end"
+                    android:gravity="end"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/notification_cardview_home"

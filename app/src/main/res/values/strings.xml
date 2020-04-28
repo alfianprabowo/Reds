@@ -25,10 +25,10 @@
     <string name="hold">Hold</string>
     <string name="sold">Sold</string>
     <string name="type">Type</string>
-    <string name="house">Rumah</string>
-    <string name="apartment">Apartemen</string>
-    <string name="shophouse">Ruko</string>
-    <string name="home_office">Ruko</string>
+    <string name="house">House</string>
+    <string name="apartment">Apartment</string>
+    <string name="shophouse">Shophouse</string>
+    <string name="home_office">Home Office</string>
     <string name="land">Tanah</string>
     <string name="manufactured_home">Rumah Produksi</string>
     <string name="password">Password</string>
@@ -48,6 +48,7 @@
     <string name="detail_property">Detail Property</string>
     <string name="floor_value">2</string>
     <string name="facility">Facility</string>
+    <string name="facilities">Facilities</string>
     <string name="type_value">Rumah</string>
 
     <string name="facility_value">AC, Carport, Garasi, Taman, Air Sumur dan PAM, Dapur Bersih dan Dapur Kotor</string>
@@ -85,5 +86,24 @@
     <string name="select_mode">Select Mode</string>
     <string name="primary_list">Primary List</string>
     <string name="personal_list">Personal List</string>
+    <string name="view_all">View All</string>
+    <string name="filter">Filter</string>
+    <string name="search_property">Search name, location </string>
+    <string name="reset">Reset</string>
+    <string name="done">Done</string>
+    <string name="price_range">Price Range</string>
+    <string name="bedrooms">Bedroom(s)</string>
+    <string name="type_property">Property Types</string>
+    <string name="max">Max</string>
+    <string name="min">Min</string>
+    <string name="min_price">Rp 100.000.000</string>
+    <string name="max_price">Rp 50.000.000.000+</string>
+    <string name="all">All</string>
+    <string name="villa">Villa</string>
+    <string name="number1">1</string>
+    <string name="number2">2</string>
+    <string name="number3">3</string>
+    <string name="number4">4+</string>
+    <string name="image_facility">Image Facility</string>
 
 </resources>
