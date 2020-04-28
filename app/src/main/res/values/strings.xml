@@ -105,5 +105,11 @@
     <string name="number3">3</string>
     <string name="number4">4+</string>
     <string name="image_facility">Image Facility</string>
+    <string name="choose_unit">Choose Unit</string>
+    <string name="unit_a">UNIT A</string>
+    <string name="unit_b">UNIT B</string>
+    <string name="unit_d">UNIT D (SOLD)</string>
+    <string name="unit_c">UNIT C</string>
+    <string name="the_ciumbuleuit_residences_unit">The Ciumbuleuit Residences Unit</string>
 
 </resources>

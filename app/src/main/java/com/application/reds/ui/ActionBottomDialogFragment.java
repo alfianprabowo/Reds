@@ -1,7 +1,10 @@
 package com.application.reds.ui;
 
 import android.annotation.SuppressLint;
+import android.content.ContentResolver;
+import android.content.res.Resources;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,6 +14,8 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -18,6 +23,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.application.reds.R;
 import com.application.reds.controller.IndonesiaCurrency;
@@ -25,17 +31,19 @@ import com.application.reds.model.facility.Facility;
 import com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarChangeListener;
 import com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarFinalValueListener;
 import com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 import java.util.ArrayList;
 
-
 public class ActionBottomDialogFragment extends BottomSheetDialogFragment
-        implements View.OnClickListener  {
+        implements View.OnClickListener {
+
+    private BottomSheetBehavior mBehavior;
 
     public static final String TAG = "ActionBottomDialog";
     private View view;
-    IndonesiaCurrency kurs;
+    private IndonesiaCurrency kurs;
     private Button[] btn = new Button[5];
     private Button btn_unfocus;
     private int[] btn_id = {R.id.btn0, R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4};
@@ -44,10 +52,7 @@ public class ActionBottomDialogFragment extends BottomSheetDialogFragment
     private Button btn_unfocus_bedroom;
     private int[] btn_bedroom_id = {R.id.button_bedroom_all, R.id.button_bedroom_1, R.id.button_bedroom_2, R.id.button_bedroom_3, R.id.button_bedroom_4};
 
-    private ListView llChb;
-
-    private String[] data = { "AC", "Carport", "Garden", "Pool"};
-    private ArrayList<String> arrData=null;
+    private String[] data = {"AC", "Carport", "Garden", "Pool"};
 
     private ArrayList<Facility> infodata;
 
@@ -55,22 +60,25 @@ public class ActionBottomDialogFragment extends BottomSheetDialogFragment
         return new ActionBottomDialogFragment();
     }
 
-    @Nullable @Override
+    @Nullable
+    @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.dialog_filter, container, false);
+
         kurs = new IndonesiaCurrency();
         bindViews();
 
         return view;
     }
 
-    private void bindViews(){
-        final CrystalRangeSeekbar rangeSeekbar =  view.findViewById(R.id.seekbar_price_dialog_filter);
+    private void bindViews() {
+
+        final CrystalRangeSeekbar rangeSeekbar = view.findViewById(R.id.seekbar_price_dialog_filter);
 
         // get min and max text view
-        final TextView tvMin =  view.findViewById(R.id.min_price_range);
-        final TextView tvMax =  view.findViewById(R.id.max_price_range);
+        final TextView tvMin = view.findViewById(R.id.min_price_range);
+        final TextView tvMax = view.findViewById(R.id.max_price_range);
 
         // set listener
         rangeSeekbar.setOnRangeSeekbarChangeListener(new OnRangeSeekbarChangeListener() {
@@ -92,7 +100,7 @@ public class ActionBottomDialogFragment extends BottomSheetDialogFragment
 
 
         // Button Property Types
-        for(int i = 0; i < btn.length; i++){
+        for (int i = 0; i < btn.length; i++) {
             btn[i] = view.findViewById(btn_id[i]);
             btn[i].setBackgroundColor(Color.TRANSPARENT);
             btn[i].setTextColor(Color.rgb(49, 50, 51));
@@ -103,7 +111,7 @@ public class ActionBottomDialogFragment extends BottomSheetDialogFragment
         setFocus(btn_unfocus, btn[0]);
 
         // Button Bedrooms
-        for(int i = 0; i < btn_bedroom.length; i++){
+        for (int i = 0; i < btn_bedroom.length; i++) {
             btn_bedroom[i] = view.findViewById(btn_bedroom_id[i]);
             btn_bedroom[i].setBackgroundColor(Color.TRANSPARENT);
             btn_bedroom[i].setTextColor(Color.rgb(49, 50, 51));
@@ -116,17 +124,39 @@ public class ActionBottomDialogFragment extends BottomSheetDialogFragment
         initData();
     }
 
-    private void initData(){
-        arrData = new ArrayList<>();
+    private void initData() {
+        ArrayList<String> arrData = new ArrayList<>();
         arrData.add("AC");
         arrData.add("Carport");
         arrData.add("Garden");
         arrData.add("Pool");
-        llChb =  view.findViewById(R.id.listview_facility_dialog_filter);
+        ListView llChb = view.findViewById(R.id.listview_facility_dialog_filter);
 
-        infodata = new ArrayList<Facility>();
+        Uri imageUri = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE +
+                "://" + getResources().getResourcePackageName(R.drawable.ic_menu) + '/' +
+                getResources().getResourceTypeName(R.drawable.ic_menu) + '/' +
+                getResources().getResourceEntryName(R.drawable.ic_menu));
+
+        Uri imageUri2 = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE +
+                "://" + getResources().getResourcePackageName(R.drawable.ic_parking) + '/' +
+                getResources().getResourceTypeName(R.drawable.ic_parking) + '/' +
+                getResources().getResourceEntryName(R.drawable.ic_parking));
+
+        Uri imageuri3 = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE +
+                "://" + getResources().getResourcePackageName(R.drawable.ic_florist) + '/' +
+                getResources().getResourceTypeName(R.drawable.ic_florist) + '/' +
+                getResources().getResourceEntryName(R.drawable.ic_florist));
+
+        Uri imageuri4 = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE +
+                "://" + getResources().getResourcePackageName(R.drawable.ic_pool) + '/' +
+                getResources().getResourceTypeName(R.drawable.ic_pool) + '/' +
+                getResources().getResourceEntryName(R.drawable.ic_pool));
+
+        Uri[] arrUri = {imageUri, imageUri2, imageuri3, imageuri4};
+
+        infodata = new ArrayList<>();
         for (int i = 0; i < data.length; i++) {
-            infodata.add(new Facility(false, i));
+            infodata.add(new Facility(false, i, arrUri[i]));
         }
         llChb.invalidate();
         llChb.setAdapter(new MyAdapter());
@@ -137,61 +167,61 @@ public class ActionBottomDialogFragment extends BottomSheetDialogFragment
         TextView tvSelected = (TextView) v;
         String selected = tvSelected.getText().toString();
 
-        switch (v.getId()){
+        switch (v.getId()) {
             // BUTTON TYPE
-            case R.id.btn0 :
+            case R.id.btn0:
                 setFocus(btn_unfocus, btn[0]);
                 break;
 
-            case R.id.btn1 :
+            case R.id.btn1:
                 setFocus(btn_unfocus, btn[1]);
                 break;
 
-            case R.id.btn2 :
+            case R.id.btn2:
                 setFocus(btn_unfocus, btn[2]);
                 break;
 
-            case R.id.btn3 :
+            case R.id.btn3:
                 setFocus(btn_unfocus, btn[3]);
                 break;
 
-            case R.id.btn4 :
+            case R.id.btn4:
                 setFocus(btn_unfocus, btn[4]);
                 break;
 
-            case R.id.reset_button_dialog_filter :
+            case R.id.reset_button_dialog_filter:
                 //mListener.onItemClick(selected);
-                Toast.makeText(getContext(), "Reset filters" , Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Reset filters", Toast.LENGTH_SHORT).show();
                 break;
 
-            case R.id.done_button_dialog_filter :
+            case R.id.done_button_dialog_filter:
                 //mListener.onItemClick(selected);
                 dismiss();
                 break;
 
-            case R.id.button_bedroom_all :
+            case R.id.button_bedroom_all:
                 setFocusBedroom(btn_unfocus_bedroom, btn_bedroom[0]);
                 break;
 
-            case R.id.button_bedroom_1 :
+            case R.id.button_bedroom_1:
                 setFocusBedroom(btn_unfocus_bedroom, btn_bedroom[1]);
                 break;
 
-            case R.id.button_bedroom_2 :
+            case R.id.button_bedroom_2:
                 setFocusBedroom(btn_unfocus_bedroom, btn_bedroom[2]);
                 break;
 
-            case R.id.button_bedroom_3 :
+            case R.id.button_bedroom_3:
                 setFocusBedroom(btn_unfocus_bedroom, btn_bedroom[3]);
                 break;
 
-            case R.id.button_bedroom_4 :
+            case R.id.button_bedroom_4:
                 setFocusBedroom(btn_unfocus_bedroom, btn_bedroom[4]);
                 break;
         }
     }
 
-    private void setFocus(Button btn_unfocus, Button btn_focus){
+    private void setFocus(Button btn_unfocus, Button btn_focus) {
         btn_unfocus.setTextColor(Color.rgb(49, 50, 51));
         btn_unfocus.setBackgroundColor(Color.TRANSPARENT);
         btn_focus.setTextColor(Color.rgb(255, 255, 255));
@@ -199,7 +229,7 @@ public class ActionBottomDialogFragment extends BottomSheetDialogFragment
         this.btn_unfocus = btn_focus;
     }
 
-    private void setFocusBedroom(Button btn_unfocus, Button btn_focus){
+    private void setFocusBedroom(Button btn_unfocus, Button btn_focus) {
         btn_unfocus.setTextColor(Color.rgb(49, 50, 51));
         btn_unfocus.setBackgroundColor(Color.TRANSPARENT);
         btn_focus.setTextColor(Color.rgb(255, 255, 255));
@@ -263,8 +293,12 @@ public class ActionBottomDialogFragment extends BottomSheetDialogFragment
             // TODO Auto-generated method stub
             View row = null;
             row = View.inflate(getContext(), R.layout.row_facility_filter, null);
-            TextView tvContent= row.findViewById(R.id.tvContent);
+
+            final Facility item = infodata.get(position);
+            TextView tvContent = row.findViewById(R.id.tvContent);
+            ImageView imageView = row.findViewById(R.id.imageContent);
             tvContent.setText(data[position]);
+            imageView.setImageURI(item.image);
 
             final CheckBox cb = row.findViewById(R.id.chbContent);
             cb.setOnClickListener(new View.OnClickListener() {
@@ -274,11 +308,9 @@ public class ActionBottomDialogFragment extends BottomSheetDialogFragment
                     // TODO Auto-generated method stub
                     infodata.get(position).isclicked = !infodata.get(position).isclicked;
 
-                    for(int i=0;i<infodata.size();i++)
-                    {
-                        if (infodata.get(i).isclicked)
-                        {
-                            System.out.println("Selectes Are == "+ data[i]);
+                    for (int i = 0; i < infodata.size(); i++) {
+                        if (infodata.get(i).isclicked) {
+                            System.out.println("Selectes Are == " + data[i]);
                         }
                     }
                 }
@@ -287,8 +319,7 @@ public class ActionBottomDialogFragment extends BottomSheetDialogFragment
             if (infodata.get(position).isclicked) {
 
                 cb.setChecked(true);
-            }
-            else {
+            } else {
                 cb.setChecked(false);
             }
             return row;

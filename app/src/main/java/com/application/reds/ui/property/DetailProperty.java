@@ -24,7 +24,7 @@ public class DetailProperty extends AppCompatActivity {
 
 
     int[] sampleImages = {R.drawable.property1, R.drawable.property1a, R.drawable.property1b};
-    int[] sampleImages2 = {R.drawable.siteplan, R.drawable.siteplan2,R.drawable.siteplan3 };
+    int[] sampleImages2 = {R.drawable.site_a_floor, R.drawable.site_a_bed, R.drawable.site_a_bath };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,6 +24,8 @@ import com.application.reds.model.property.PropertyAdapter;
 import com.application.reds.model.property.PropertyAdapterListener;
 import com.application.reds.ui.ActionBottomDialogFragment;
 import com.application.reds.ui.property.DetailProperty;
+import com.application.reds.ui.property.SitePlanProperty;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -32,6 +35,9 @@ public class PropertyFragment extends Fragment implements PropertyAdapterListene
     private View view;
     private static ArrayList<Property> propertList = new ArrayList<>();
     private CardView filter_button;
+
+    BottomSheetBehavior bottomSheetBehavior;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -80,9 +86,9 @@ public class PropertyFragment extends Fragment implements PropertyAdapterListene
                 getResources().getResourceEntryName(R.drawable.property3));
 
         Uri imageUri3 = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE +
-                "://" + getResources().getResourcePackageName(R.drawable.siteplan2) + '/' +
-                getResources().getResourceTypeName(R.drawable.siteplan2) + '/' +
-                getResources().getResourceEntryName(R.drawable.siteplan2));
+                "://" + getResources().getResourcePackageName(R.drawable.site_view) + '/' +
+                getResources().getResourceTypeName(R.drawable.site_view) + '/' +
+                getResources().getResourceEntryName(R.drawable.site_view));
 
 
         Property property = new Property(
@@ -121,7 +127,7 @@ public class PropertyFragment extends Fragment implements PropertyAdapterListene
 
         Property komplek = new Property(
                 3,
-                "Komplek Ciumbuleuit",
+                "The Ciumbuleuit Residences",
                 "Ciumbuleuit, Bandung",
                 "Jl. Raya Ciumbuleuit no 99",
                 "Available",
@@ -145,9 +151,16 @@ public class PropertyFragment extends Fragment implements PropertyAdapterListene
 
     @Override
     public void onItemSelected(Property data) {
-        Intent intent = new Intent(getContext(), DetailProperty.class);
-        intent.putExtra("property", data.getId() + "");
-        startActivity(intent);
+        if(data.getId() == 3){
+            Intent intent = new Intent(getContext(), SitePlanProperty.class);
+            intent.putExtra("property", data.getId() + "");
+            startActivity(intent);
+        } else{
+            Intent intent = new Intent(getContext(), DetailProperty.class);
+            intent.putExtra("property", data.getId() + "");
+            startActivity(intent);
+        }
+
     }
 
 

@@ -39,6 +39,9 @@
         <activity
             android:name=".ui.property.DetailProperty">
         </activity>
+        <activity
+            android:name=".ui.property.SitePlanProperty">
+        </activity>
 
     </application>
 

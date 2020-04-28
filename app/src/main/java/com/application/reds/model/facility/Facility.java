@@ -7,15 +7,15 @@ public class Facility {
     public boolean isclicked=false;
     public int index;
 
-    private Uri image;
+    public Uri image;
     /*public String fanId;
     public String strAmount;*/
 
-    public Facility(boolean isclicked,int index/*, Uri image*/)
+    public Facility(boolean isclicked,int index, Uri image)
     {
         this.index=index;
         this.isclicked=isclicked;
-        //this.image = image;
+        this.image = image;
     }
 
 
