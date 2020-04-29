@@ -23,7 +23,7 @@
     <fragment
         android:id="@+id/nav_presentation_personal"
         android:name="com.application.reds.ui.presentation.personal.PersonalFragment"
-        android:label="@string/personal"
+        android:label="@string/rent"
         tools:layout="@layout/fragment_presentation_personal" >
     </fragment>
 

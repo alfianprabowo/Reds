@@ -86,7 +86,7 @@
     <string name="select_mode">Select Mode</string>
     <string name="primary_list">Primary List</string>
     <string name="personal_list">Personal List</string>
-    <string name="view_all">View All</string>
+    <string name="see_all">See All</string>
     <string name="filter">Filter</string>
     <string name="search_property">Search name, location </string>
     <string name="reset">Reset</string>
@@ -109,7 +109,17 @@
     <string name="unit_a">UNIT A</string>
     <string name="unit_b">UNIT B</string>
     <string name="unit_d">UNIT D (SOLD)</string>
-    <string name="unit_c">UNIT C</string>
+    <string name="unit_c">UNIT C (HOLD)</string>
     <string name="the_ciumbuleuit_residences_unit">The Ciumbuleuit Residences Unit</string>
+    <string name="rent">Rent</string>
+    <string name="time_period">Time Period</string>
+    <string name="daily">Daily</string>
+    <string name="weekly">Weekly</string>
+    <string name="monthly">Monthly</string>
+    <string name="yearly">Yearly</string>
+    <string name="owner">Owner</string>
+    <string name="call">Call</string>
+    <string name="image">Image</string>
+    <string name="pt_sukses_properti_indo">PT Sukses Properti Indo</string>
 
 </resources>

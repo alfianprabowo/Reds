@@ -24,7 +24,8 @@ public class DetailProperty extends AppCompatActivity {
 
 
     int[] sampleImages = {R.drawable.property1, R.drawable.property1a, R.drawable.property1b};
-    int[] sampleImages2 = {R.drawable.site_a_floor, R.drawable.site_a_bed, R.drawable.site_a_bath };
+    int[] sampleImages2 = {R.drawable.property3, R.drawable.property1a, R.drawable.property1b};
+    int[] sampleImages3 = {R.drawable.site_a_floor, R.drawable.site_a_bed, R.drawable.site_a_bath };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +43,12 @@ public class DetailProperty extends AppCompatActivity {
         ImageListener imageListener = new ImageListener() {
             @Override
             public void setImageForPosition(int position, ImageView imageView) {
-                if(property == 1){
+                if(property == 1 ){
                     imageView.setImageResource(sampleImages[position]);
-                } if(property == 3) {
+                }else if(property == 2) {
                     imageView.setImageResource(sampleImages2[position]);
+                }else if(property == 3) {
+                    imageView.setImageResource(sampleImages3[position]);
                 }
             }
         };

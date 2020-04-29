@@ -14,6 +14,6 @@
     <item
         android:id="@+id/nav_presentation_personal"
         android:icon="@drawable/ic_assessment"
-        android:title="@string/personal" />
+        android:title="@string/rent" />
 
 </menu>
