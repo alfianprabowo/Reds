@@ -42,6 +42,7 @@ public class ActionBottomDialogFragment extends BottomSheetDialogFragment
     public static final String TAG = "ActionBottomDialog";
     private View view;
     private IndonesiaCurrency kurs;
+
     private Button[] btn = new Button[5];
     private Button btn_unfocus;
     private int[] btn_id = {R.id.btn0, R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4};

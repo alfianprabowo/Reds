@@ -27,5 +27,12 @@
         tools:layout="@layout/fragment_presentation_personal" >
     </fragment>
 
+    <fragment
+        android:id="@+id/nav_presentation_account"
+        android:name="com.application.reds.ui.presentation.account.AccountFragment"
+        android:label="@string/account"
+        tools:layout="@layout/fragment_presentation_account" >
+    </fragment>
+
 
 </navigation>

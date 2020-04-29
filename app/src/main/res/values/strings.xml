@@ -122,5 +122,15 @@
     <string name="image">Image</string>
     <string name="pt_sukses_properti_indo">PT Sukses Properti Indo</string>
     <string name="rent_list">Rent List</string>
+    <string name="create_customer">Create Customer</string>
+    <string name="phone">Phone</string>
+    <string name="address">Address</string>
+    <string name="escrow">Escrow</string>
+    <string name="mpos">MPOS</string>
+    <string name="payment_type">Payment Type</string>
+    <string name="checkout">Checkout</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="customer_data">Data Customer</string>
 
 </resources>

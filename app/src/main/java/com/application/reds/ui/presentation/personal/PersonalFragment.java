@@ -46,8 +46,8 @@ public class PersonalFragment extends Fragment implements PropertyAdapterListene
         filter_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ActionBottomDialogFragment addPhotoBottomDialogFragment = ActionBottomDialogFragment.newInstance();
-                addPhotoBottomDialogFragment.show(getParentFragmentManager(), ActionBottomDialogFragment.TAG);
+                ActionBottomRent addPhotoBottomDialogFragment = ActionBottomRent.newInstance();
+                addPhotoBottomDialogFragment.show(getParentFragmentManager(), ActionBottomRent.TAG);
             }
         });
     }

@@ -9,7 +9,7 @@
     app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
 
     <TextView
-        android:id="@+id/type_text_dialog_filter"
+        android:id="@+id/rent_text_dialog_filter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -17,6 +17,85 @@
         android:text="@string/time_period"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <HorizontalScrollView
+        android:id="@+id/rent_dialog_filter_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rent_text_dialog_filter">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/btn_all"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/all" />
+
+            <Button
+                android:id="@+id/btn_daily"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/daily" />
+
+            <Button
+                android:id="@+id/btn_weekly"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/weekly" />
+
+            <Button
+                android:id="@+id/btn_monthly"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/monthly" />
+
+            <Button
+                android:id="@+id/btn_yearly"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/yearly" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/type_text_dialog_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/type_property"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rent_dialog_filter_scroll" />
 
     <HorizontalScrollView
         android:id="@+id/type_dialog_filter_scroll"
@@ -51,7 +130,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                android:text="@string/daily" />
+                android:text="@string/house" />
 
             <Button
                 android:id="@+id/btn2"
@@ -61,7 +140,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                android:text="@string/weekly" />
+                android:text="@string/apartment" />
 
             <Button
                 android:id="@+id/btn3"
@@ -71,7 +150,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                android:text="@string/monthly" />
+                android:text="@string/villa" />
 
             <Button
                 android:id="@+id/btn4"
@@ -81,11 +160,213 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                android:text="@string/yearly" />
+                android:text="@string/shophouse" />
 
         </LinearLayout>
 
     </HorizontalScrollView>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_shape_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/type_dialog_filter_scroll" />
+
+    <TextView
+        android:id="@+id/price_text_dialog_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/price_range"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_price_range_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/price_text_dialog_filter">
+
+        <TextView
+            android:id="@+id/min_price_range"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_shape_gray"
+            android:padding="8dp"
+            android:text="@string/min_price"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/max_price_range"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/max_price_range"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_shape_gray"
+            android:padding="8dp"
+            android:text="@string/max_price"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/min_price_range"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.crystal.crystalrangeseekbar.widgets.BubbleThumbRangeSeekbar
+        android:id="@+id/seekbar_price_dialog_filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:bar_color="#F7BB88"
+        app:bar_highlight_color="#E07416"
+        app:corner_radius="10"
+        app:data_type="_integer"
+        app:gap="100000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_price_range_dialog"
+        app:left_thumb_image="@drawable/thumb"
+        app:left_thumb_image_pressed="@drawable/thumb_pressed"
+        app:max_value="20000000000"
+        app:min_value="100000000"
+        app:right_thumb_image="@drawable/thumb"
+        app:right_thumb_image_pressed="@drawable/thumb_pressed"
+        app:steps="100000000" />
+
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_shape_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seekbar_price_dialog_filter" />
+
+    <TextView
+        android:id="@+id/bedroom_text_dialog_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/bedrooms"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider3" />
+
+    <HorizontalScrollView
+        android:id="@+id/bedroom_dialog_filter_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bedroom_text_dialog_filter">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/button_bedroom_all"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/all" />
+
+            <Button
+                android:id="@+id/button_bedroom_1"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/number1" />
+
+            <Button
+                android:id="@+id/button_bedroom_2"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/number2" />
+
+            <Button
+                android:id="@+id/button_bedroom_3"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/number3" />
+
+            <Button
+                android:id="@+id/button_bedroom_4"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/number4" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <View
+        android:id="@+id/divider4"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_shape_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bedroom_dialog_filter_scroll" />
+
+    <TextView
+        android:id="@+id/facility_text_dialog_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/facilities"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider4" />
+
+    <ListView
+        android:id="@+id/listview_facility_dialog_filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/facility_text_dialog_filter"
+        app:layout_constraintBottom_toTopOf="@+id/linear_footer_dialog_filter"/>
 
     <LinearLayout
         android:id="@+id/linear_footer_dialog_filter"

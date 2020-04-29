@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,6 +13,8 @@ import androidx.fragment.app.Fragment;
 
 import com.application.reds.MainActivity;
 import com.application.reds.R;
+import com.application.reds.ui.checkout.CheckoutActivity;
+import com.application.reds.ui.customer.CustomerFragment;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
 
@@ -21,7 +24,7 @@ public class DetailProperty extends AppCompatActivity {
 
     CarouselView carouselView;
     private TextView name_tv, location_tv, price_tv, status_tv, bedroom_tv, bathroom_tv, surface_tv, building_tv, floor_tv, type_tv, facility_tv, description_tv;
-
+    private Button button_pay;
 
     int[] sampleImages = {R.drawable.property1, R.drawable.property1a, R.drawable.property1b};
     int[] sampleImages2 = {R.drawable.property3, R.drawable.property1a, R.drawable.property1b};
@@ -54,7 +57,14 @@ public class DetailProperty extends AppCompatActivity {
         };
 
         carouselView.setImageListener(imageListener);
-
+        button_pay = findViewById(R.id.button_pay);
+        button_pay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(getApplicationContext(), CheckoutActivity.class);
+                startActivity(intent1);
+            }
+        });
     }
 
     @Override
