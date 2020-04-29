@@ -33,7 +33,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="@string/personal_list"
+                    android:text="@string/rent_list"
                     android:textSize="18sp"
                     android:textColor="@color/white"/>
 

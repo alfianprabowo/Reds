@@ -87,10 +87,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
                     android:text="@string/see_all"
+                    android:clickable="true"
                     android:textColor="@color/colorPrimaryDark"
                     android:layout_gravity="end"
                     android:gravity="end"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:focusable="true" />
 
             </LinearLayout>
 
@@ -110,7 +112,15 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="8dp">
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/image_chat1"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/avatar"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
 
                     <TextView
                         android:id="@+id/name_chat1"
@@ -118,9 +128,9 @@
                         android:layout_height="wrap_content"
                         android:text="Mike"
                         android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/image_chat1"
                         app:layout_constraintTop_toTopOf="parent"
-                        android:layout_marginStart="8dp"/>
+                        android:layout_marginStart="16dp"/>
 
                     <TextView
                         android:id="@+id/message1"
@@ -128,9 +138,9 @@
                         android:layout_height="wrap_content"
                         android:text="Ada update terbaru nih ..."
                         android:textSize="12sp"
-                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/image_chat1"
                         app:layout_constraintTop_toBottomOf="@+id/name_chat1"
-                        android:layout_marginStart="8dp"/>
+                        android:layout_marginStart="52dp"/>
 
                     <TextView
                         android:id="@+id/time_chat1"
@@ -164,7 +174,16 @@
                         app:layout_constraintTop_toBottomOf="@id/message1"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        android:layout_margin="8dp"/>
+                        android:layout_marginTop="16dp"/>
+
+                    <ImageView
+                        android:id="@+id/image_chat2"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/avatar"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/divider_chat1"/>
 
                     <TextView
                         android:id="@+id/name_chat2"
@@ -172,10 +191,10 @@
                         android:layout_height="wrap_content"
                         android:text="Agus"
                         android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/image_chat2"
                         app:layout_constraintTop_toBottomOf="@+id/divider_chat1"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginStart="8dp"/>
+                        android:layout_marginTop="16dp"
+                        android:layout_marginStart="16dp"/>
 
                     <TextView
                         android:id="@+id/message2"
@@ -183,9 +202,9 @@
                         android:layout_height="wrap_content"
                         android:text="Property yg di menteng jadi diambil ?"
                         android:textSize="12sp"
-                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/image_chat2"
                         app:layout_constraintTop_toBottomOf="@+id/name_chat2"
-                        android:layout_marginStart="8dp"/>
+                        android:layout_marginStart="52dp"/>
 
                     <TextView
                         android:id="@+id/time_chat2"
@@ -195,7 +214,7 @@
                         android:textSize="12sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/divider_chat1"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="16dp"
                         android:layout_marginEnd="8dp"/>
 
                     <TextView
@@ -273,7 +292,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="8dp">
+                    android:padding="16dp">
 
                     <TextView
                         android:id="@+id/name_transaction1"
@@ -315,7 +334,7 @@
                         app:layout_constraintTop_toBottomOf="@id/status_transaction1"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        android:layout_margin="8dp"/>
+                        android:layout_marginTop="16dp"/>
 
                     <TextView
                         android:id="@+id/name_transaction2"
@@ -326,7 +345,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/divider_transaction1"
                         android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"/>
+                        android:layout_marginTop="16dp"/>
 
 
                     <TextView
@@ -349,7 +368,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/divider_transaction1"
                         android:layout_marginEnd="8dp"
-                        android:layout_marginTop="8dp"/>
+                        android:layout_marginTop="16dp"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -411,7 +430,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="8dp">
+                    android:padding="16dp">
 
                     <TextView
                         android:id="@+id/name_notif1"
@@ -442,7 +461,7 @@
                         app:layout_constraintTop_toBottomOf="@id/name_notif1"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        android:layout_margin="8dp"/>
+                        android:layout_marginTop="16dp"/>
 
                     <TextView
                         android:id="@+id/name_notif2"
@@ -453,7 +472,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/divider_notif1"
                         android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"/>
+                        android:layout_marginTop="16dp"/>
 
 
                     <TextView
@@ -465,7 +484,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/divider_notif1"
                         android:layout_marginEnd="8dp"
-                        android:layout_marginTop="8dp"/>
+                        android:layout_marginTop="16dp"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

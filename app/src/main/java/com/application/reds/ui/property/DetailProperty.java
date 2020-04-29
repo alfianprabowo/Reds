@@ -57,8 +57,6 @@ public class DetailProperty extends AppCompatActivity {
 
     }
 
-
-
     @Override
     public void onBackPressed() {
         super.onBackPressed();

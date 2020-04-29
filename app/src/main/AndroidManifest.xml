@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".PresentationActivity" >
+            android:name=".ModeActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,25 +22,38 @@
             android:name=".MainActivity">
         </activity>
 
-        <activity
+        <!--<activity
             android:name=".ModeActivity">
-        </activity>
+        </activity>-->
 
         <activity
             android:name=".BrokerActivity"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan" >
         </activity>
 
-        <!--<activity
+        <activity
             android:name=".PresentationActivity"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan" >
-        </activity>-->
+        </activity>
 
         <activity
             android:name=".ui.property.DetailProperty">
         </activity>
+
         <activity
             android:name=".ui.property.SitePlanProperty">
+        </activity>
+
+        <activity
+            android:name=".ui.chat.ChatActivity">
+        </activity>
+
+        <activity
+            android:name=".ui.transaction.TransactionProgressActivity">
+        </activity>
+
+        <activity
+            android:name=".ui.notification.NotificationActivity">
         </activity>
 
     </application>

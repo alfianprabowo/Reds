@@ -1,7 +1,264 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.chat.ChatActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/message_toolbar"
+            style="@style/ThemeOverlay.AppCompat.ActionBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            app:contentInsetStartWithNavigation="0dp"
+            app:layout_collapseMode="pin">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageButton
+                    android:src="@drawable/ic_arrow_back"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/back"
+                    android:onClick="back"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/chat"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"/>
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <SearchView
+        android:id="@+id/search_chat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:iconifiedByDefault="false"
+        android:queryHint="Search..."
+        android:layout_marginTop="16dp"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appbar_message"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/chat_cardview_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_chat"
+        android:elevation="5dp"
+        app:cardCornerRadius="8dp"
+        app:cardUseCompatPadding="true"
+        android:layout_marginTop="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/image_chat1"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/avatar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/image" />
+
+            <TextView
+                android:id="@+id/name_chat1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mike"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/image_chat1"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="16dp"/>
+
+            <TextView
+                android:id="@+id/message1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ada update terbaru nih ..."
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@id/image_chat1"
+                app:layout_constraintTop_toBottomOf="@+id/name_chat1"
+                android:layout_marginStart="52dp"/>
+
+            <TextView
+                android:id="@+id/time_chat1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="08:00"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/count_message1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:textColor="@color/white"
+                android:background="@drawable/background_notif"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/time_chat1"
+                android:layout_marginEnd="8dp"/>
+
+            <View
+                android:id="@+id/divider_chat1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintTop_toBottomOf="@id/message1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"/>
+
+            <ImageView
+                android:id="@+id/image_chat2"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/avatar"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider_chat1"
+                android:contentDescription="@string/image" />
+
+            <TextView
+                android:id="@+id/name_chat2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Agus"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/image_chat2"
+                app:layout_constraintTop_toBottomOf="@+id/divider_chat1"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"/>
+
+            <TextView
+                android:id="@+id/message2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Property yg di menteng jadi diambil ?"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/image_chat2"
+                app:layout_constraintTop_toBottomOf="@+id/name_chat2"
+                android:layout_marginStart="52dp"/>
+
+            <TextView
+                android:id="@+id/time_chat2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kemarin"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider_chat1"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/count_message2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3"
+                android:textColor="@color/white"
+                android:background="@drawable/background_notif"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/time_chat2"
+                android:layout_marginEnd="8dp"/>
+
+            <View
+                android:id="@+id/divider_chat2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintTop_toBottomOf="@id/image_chat2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"/>
+
+            <ImageView
+                android:id="@+id/image_chat3"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/avatar"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider_chat2"
+                android:contentDescription="@string/image" />
+
+            <TextView
+                android:id="@+id/name_chat3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Radewa"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/image_chat3"
+                app:layout_constraintTop_toBottomOf="@+id/divider_chat2"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"/>
+
+            <TextView
+                android:id="@+id/message3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Propertynya udah ada yg bayar"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/image_chat3"
+                app:layout_constraintTop_toBottomOf="@+id/name_chat3"
+                android:layout_marginStart="52dp"/>
+
+            <TextView
+                android:id="@+id/time_chat3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kemarin"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider_chat2"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

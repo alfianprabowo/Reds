@@ -1,4 +1,4 @@
-package com.application.reds.ui.chat;
+package com.application.reds.ui.transaction;
 
 import android.os.Bundle;
 import android.view.View;
@@ -7,12 +7,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.application.reds.R;
 
-public class ChatActivity extends AppCompatActivity {
+public class TransactionProgressActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chat);
+        setContentView(R.layout.activity_transaction_progress);
 
     }
 
@@ -25,4 +25,6 @@ public class ChatActivity extends AppCompatActivity {
     public void back(View view) {
         finish();
     }
+
+
 }
